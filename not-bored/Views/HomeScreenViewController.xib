@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeScreenViewController" customModule="not_bored" customModuleProvider="target">
             <connections>
+                <outlet property="btnStart" destination="48t-wo-pXy" id="Fkm-ym-zcz"/>
                 <outlet property="btnTerms" destination="nX6-wN-tXD" id="RB2-wm-qrs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -43,6 +44,9 @@
                     <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Start"/>
+                    <connections>
+                        <action selector="btnStart:" destination="-1" eventType="touchUpInside" id="Xj4-wz-Rzi"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nX6-wN-tXD">
                     <rect key="frame" x="30" y="795" width="354" height="31"/>

@@ -16,6 +16,10 @@
 		566D5D17277CE64000F2F042 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566D5D15277CE64000F2F042 /* LaunchScreen.storyboard */; };
 		566D5D20277CE6EA00F2F042 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D5D1E277CE6EA00F2F042 /* HomeScreenViewController.swift */; };
 		566D5D21277CE6EA00F2F042 /* HomeScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566D5D1F277CE6EA00F2F042 /* HomeScreenViewController.xib */; };
+		93CDF30B278326EB00C540C3 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CDF309278326EB00C540C3 /* CategoriesViewController.swift */; };
+		93CDF30C278326EB00C540C3 /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93CDF30A278326EB00C540C3 /* CategoriesViewController.xib */; };
+		93CDF30F27832CD800C540C3 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CDF30D27832CD800C540C3 /* SuggestionViewController.swift */; };
+		93CDF31027832CD800C540C3 /* SuggestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93CDF30E27832CD800C540C3 /* SuggestionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		566D5D18277CE64000F2F042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		566D5D1E277CE6EA00F2F042 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		566D5D1F277CE6EA00F2F042 /* HomeScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenViewController.xib; sourceTree = "<group>"; };
+		93CDF309278326EB00C540C3 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		93CDF30A278326EB00C540C3 /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
+		93CDF30D27832CD800C540C3 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
+		93CDF30E27832CD800C540C3 /* SuggestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +54,8 @@
 		4B686B44277DE42E005D39FF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				93CDF30E27832CD800C540C3 /* SuggestionViewController.xib */,
+				93CDF30A278326EB00C540C3 /* CategoriesViewController.xib */,
 				566D5D1F277CE6EA00F2F042 /* HomeScreenViewController.xib */,
 				4B686B48277DE4BF005D39FF /* TermsAndConditionsViewController.xib */,
 			);
@@ -64,6 +74,8 @@
 			children = (
 				566D5D1E277CE6EA00F2F042 /* HomeScreenViewController.swift */,
 				4B686B47277DE4BF005D39FF /* TermsAndConditionsViewController.swift */,
+				93CDF309278326EB00C540C3 /* CategoriesViewController.swift */,
+				93CDF30D27832CD800C540C3 /* SuggestionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -160,7 +172,9 @@
 			files = (
 				4B686B4A277DE4BF005D39FF /* TermsAndConditionsViewController.xib in Resources */,
 				566D5D17277CE64000F2F042 /* LaunchScreen.storyboard in Resources */,
+				93CDF30C278326EB00C540C3 /* CategoriesViewController.xib in Resources */,
 				566D5D21277CE6EA00F2F042 /* HomeScreenViewController.xib in Resources */,
+				93CDF31027832CD800C540C3 /* SuggestionViewController.xib in Resources */,
 				566D5D14277CE64000F2F042 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,11 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93CDF30F27832CD800C540C3 /* SuggestionViewController.swift in Sources */,
 				566D5D0F277CE63D00F2F042 /* ViewController.swift in Sources */,
 				566D5D20277CE6EA00F2F042 /* HomeScreenViewController.swift in Sources */,
 				566D5D0B277CE63D00F2F042 /* AppDelegate.swift in Sources */,
 				4B686B49277DE4BF005D39FF /* TermsAndConditionsViewController.swift in Sources */,
 				566D5D0D277CE63D00F2F042 /* SceneDelegate.swift in Sources */,
+				93CDF30B278326EB00C540C3 /* CategoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

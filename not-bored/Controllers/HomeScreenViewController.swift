@@ -9,11 +9,16 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
 
+    @IBOutlet weak var btnStart: UIButton!
     
     @IBOutlet weak var btnTerms: UIButton!
 
     @IBAction func btnTerms(_ sender: Any) {
         goToTerms()
+    }
+    
+    @IBAction func btnStart(_ sender: Any) {
+        goToCategories()
     }
     
     override func viewDidLoad() {
@@ -24,6 +29,11 @@ class HomeScreenViewController: UIViewController {
     
     func goToTerms() {
         let vc = TermsAndConditionsViewController(nibName: "TermsAndConditionsViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func goToCategories() {
+        let vc = CategoriesViewController(nibName: "CategoriesViewController", bundle: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
  
