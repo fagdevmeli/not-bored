@@ -15,34 +15,25 @@ class CategoriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupShuffleButton()
-        setupCategproes()
+        setupNavigationBar()
+        setupCategories()
     }
     
-    func setupShuffleButton() {
+    func setupNavigationBar() {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "shuffle"), style: .plain, target: self, action: #selector(tapShuffle))
         
     }
     
-    func setupCategproes() {
+    func setupCategories() {
         self.tableCategories.dataSource = self
         self.tableCategories.delegate = self
     }
-        
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
     @objc func tapShuffle() {
         print("Test")
         let vc = SuggestionViewController(nibName: "SuggestionViewController", bundle: nil)
+        vc.category = "random"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -62,5 +53,11 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell?.textLabel?.text = categories[indexPath.row]
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = SuggestionViewController(nibName: "SuggestionViewController", bundle: nil)
+        vc.category = categories[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -8,22 +8,33 @@
 import UIKit
 
 class SuggestionViewController: UIViewController {
+    
+    let ws = ActivitiesWS()
+    var category: String = ""
+    var participants: String = "0"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        getData()
+        getParticipants()
+        
+    }
+    
+    func getParticipants(){
+        
+        let userDefaults = UserDefaults.standard
+        let getPart = userDefaults.object(forKey: "participants")
+        self.participants = getPart as! String
+        print(participants)
+    }
+    
+    func getData(){
+        ws.getActivity(participants: 1, category: self.category) { activities in
+            print(activities)
+        } onError: { errorData in
+            print(errorData)
+        }
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

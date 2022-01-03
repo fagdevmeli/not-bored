@@ -13,6 +13,8 @@ class HomeScreenViewController: UIViewController {
     
     @IBOutlet weak var btnTerms: UIButton!
 
+    @IBOutlet weak var participants: UITextField!
+    
     @IBAction func btnTerms(_ sender: Any) {
         goToTerms()
     }
@@ -33,6 +35,10 @@ class HomeScreenViewController: UIViewController {
     }
     
     func goToCategories() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(participants.text, forKey: "participants")
+        userDefaults.synchronize()
+        
         let vc = CategoriesViewController(nibName: "CategoriesViewController", bundle: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
