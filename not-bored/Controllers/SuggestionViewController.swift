@@ -11,25 +11,24 @@ class SuggestionViewController: UIViewController {
     
     let ws = ActivitiesWS()
     var category: String = ""
-    var participants: String = "0"
+    var participants = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
         getParticipants()
-        
+        getData()  
     }
     
     func getParticipants(){
         
         let userDefaults = UserDefaults.standard
-        let getPart = userDefaults.object(forKey: "participants")
-        self.participants = getPart as! String
+        let getPart = userDefaults.integer(forKey: "participants")
+        self.participants = getPart
         print(participants)
     }
     
     func getData(){
-        ws.getActivity(participants: 1, category: self.category) { activities in
+        ws.getActivity(participants: participants, category: self.category) { activities in
             print(activities)
         } onError: { errorData in
             print(errorData)

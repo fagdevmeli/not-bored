@@ -36,11 +36,14 @@ struct ActivitiesWS {
             let activities = try? jsondecoder.decode(Activities.self, from: data)
             
             guard let activitiesData = activities else{
-                onError("algo paso")
+                let error = try? jsondecoder.decode(ActivitesError.self, from: data)
+                guard let actError = error else {
+                    onError("algo pasó")
+                    return}
+                onError(actError.error)
                 return
             }
             onSuccess(activitiesData)
-            
         }
     }
 }

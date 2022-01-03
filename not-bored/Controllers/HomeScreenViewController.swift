@@ -42,5 +42,4 @@ class HomeScreenViewController: UIViewController {
         let vc = CategoriesViewController(nibName: "CategoriesViewController", bundle: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
- 
 }

@@ -16,3 +16,7 @@ struct Activities: Codable {
     let link: String
     let key: String
 }
+
+struct ActivitesError: Codable {
+    let error: String 
+}
