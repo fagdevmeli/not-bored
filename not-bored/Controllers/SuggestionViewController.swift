@@ -10,6 +10,9 @@ import UIKit
 class SuggestionViewController: UIViewController {
     
     let ws = ActivitiesWS()
+    
+//  Declaro Spinner
+    let child = SpinnerViewController()
     var category: String = ""
     var participants = 0
 
@@ -38,11 +41,23 @@ class SuggestionViewController: UIViewController {
         print(participants)
     }
     
-    func getData(){
+    func getData() {
+//        inicializo spinner
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+        
         ws.getActivity(participants: participants, category: self.category) { activities in
             self.setUpValues(activities)
-            print(activities)
+//            Para cerrar spinner una vez que cargó
+            self.child.willMove(toParent: nil)
+            self.child.view.removeFromSuperview()
+            self.child.removeFromParent()
         } onError: { errorData in
+            self.showAlertWithTitleRetry("Something is wrong", message: errorData) {
+                self.navigationController?.popViewController(animated: true)
+            }
             print(errorData)
         }
     }

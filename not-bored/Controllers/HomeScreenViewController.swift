@@ -28,7 +28,6 @@ class HomeScreenViewController: UIViewController {
         IQKeyboardManager.shared.enable = true
         super.viewDidLoad()
         participants.addTarget(self, action:#selector(checkParticipants) , for: .editingChanged)
-
         // Do any additional setup after loading the view.
     }
     
@@ -46,6 +45,7 @@ class HomeScreenViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+
     @objc func checkParticipants() {
         if self.participants.text == "3" {
             btnStart.isEnabled = false
