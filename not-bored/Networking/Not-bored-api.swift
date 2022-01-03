@@ -20,11 +20,20 @@ struct ActivitiesWS {
         let urlBase = "https://www.boredapi.com/api/activity"
         var urlString: String = ""
         
-        urlString = "\(urlBase)?participants=\(participants)"
-        
-        if category != "random" {
-            urlString = "\(urlString)&type=\(category)"
+        if participants > 0 {
+            urlString = "\(urlBase)?participants=\(participants)"
+            if category != "random" {
+                urlString = "\(urlString)&type=\(category)"
+            }
         }
+        else {
+            urlString = "\(urlBase)"
+            if category != "random" {
+                urlString = "\(urlString)?type=\(category)"
+            }
+        }
+        
+        print(urlString)
         
         let req = AF.request(urlString)
                 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class HomeScreenViewController: UIViewController {
 
@@ -24,7 +25,9 @@ class HomeScreenViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        IQKeyboardManager.shared.enable = true
         super.viewDidLoad()
+        participants.addTarget(self, action:#selector(checkParticipants) , for: .editingChanged)
 
         // Do any additional setup after loading the view.
     }
@@ -41,5 +44,16 @@ class HomeScreenViewController: UIViewController {
         
         let vc = CategoriesViewController(nibName: "CategoriesViewController", bundle: nil)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func checkParticipants() {
+        if self.participants.text == "3" {
+            btnStart.isEnabled = false
+            btnStart.backgroundColor = .gray
+        }
+        else {
+            btnStart.isEnabled = true
+            btnStart.backgroundColor = UIColor(.accentColor)
+        }
     }
 }

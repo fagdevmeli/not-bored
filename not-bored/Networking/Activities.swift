@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Activities: Codable {
     let activity: String
@@ -15,6 +16,7 @@ struct Activities: Codable {
     let price: Double
     let link: String
     let key: String
+    
 }
 
 struct ActivitesError: Codable {
