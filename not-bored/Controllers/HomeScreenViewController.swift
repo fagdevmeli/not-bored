@@ -22,7 +22,7 @@ class HomeScreenViewController: UIViewController {
     
     @IBOutlet weak var switchTerms: UISwitch!
     
-    @IBAction func switchTerms(_ sender: Any) {
+    @IBAction func switchTerms(_ sender: UISwitch) {
         turnStartButton()
     }
     

@@ -21,7 +21,11 @@ class CategoriesViewController: UIViewController {
     
     func setupNavigationBar() {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "shuffle"), style: .plain, target: self, action: #selector(tapShuffle))
+        let barItem = UIBarButtonItem(image: UIImage(systemName: "shuffle"),
+                                      style: .plain,
+                                      target: self, action: #selector(tapShuffle))
+        barItem.tintColor = .green
+        navigationItem.rightBarButtonItem = barItem
         
     }
     

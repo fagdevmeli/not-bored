@@ -38,8 +38,13 @@ struct ActivitiesWS {
         let req = AF.request(urlString)
                 
         req.response { DataResponse in
-            
+            if DataResponse.error == nil {
+                
+            }else {
+                
+            }//http
             guard let data = DataResponse.data else{return}
+            
             let jsondecoder = JSONDecoder()
             //            porque se usa self despues del parametro??
             let activities = try? jsondecoder.decode(Activities.self, from: data)
