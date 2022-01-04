@@ -20,6 +20,12 @@ class HomeScreenViewController: UIViewController {
         goToTerms()
     }
     
+    @IBOutlet weak var switchTerms: UISwitch!
+    
+    @IBAction func switchTerms(_ sender: Any) {
+        turnStartButton()
+    }
+    
     @IBAction func btnStart(_ sender: Any) {
         goToCategories()
     }
@@ -27,7 +33,9 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         IQKeyboardManager.shared.enable = true
         super.viewDidLoad()
-        participants.addTarget(self, action:#selector(checkParticipants) , for: .editingChanged)
+        participants.addTarget(self, action:#selector(turnStartButton) , for: .editingChanged)
+        self.switchTerms.isOn = false
+        self.turnStartButton()
         // Do any additional setup after loading the view.
     }
     
@@ -45,15 +53,26 @@ class HomeScreenViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-
-    @objc func checkParticipants() {
-        if self.participants.text == "3" {
+    @objc func turnStartButton(){
+        
+        if switchTerms.isOn && self.checkParticipants() {
+            btnStart.isEnabled = true
+            btnStart.backgroundColor = UIColor(.accentColor)
+        } else {
             btnStart.isEnabled = false
             btnStart.backgroundColor = .gray
         }
+    }
+    
+
+    @objc func checkParticipants() -> Bool {
+        guard let input = self.participants.text else {return true}
+        let inputCast = Int(input) ?? 1
+        if  inputCast <= 0 {
+            return false
+        }
         else {
-            btnStart.isEnabled = true
-            btnStart.backgroundColor = UIColor(.accentColor)
+            return true
         }
     }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,6 +14,7 @@
                 <outlet property="btnStart" destination="48t-wo-pXy" id="Fkm-ym-zcz"/>
                 <outlet property="btnTerms" destination="nX6-wN-tXD" id="RB2-wm-qrs"/>
                 <outlet property="participants" destination="VWz-2o-2wp" id="Keo-Lq-Uhc"/>
+                <outlet property="switchTerms" destination="A7X-9E-bvs" id="b6d-z0-1xO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -50,32 +51,40 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nX6-wN-tXD">
-                    <rect key="frame" x="30" y="795" width="354" height="31"/>
+                    <rect key="frame" x="129" y="791" width="225" height="31"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Terms and Conditions"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Terms and Conditions" titleAlignment="leading"/>
                     <connections>
                         <action selector="btnTerms:" destination="-1" eventType="touchUpInside" id="t4h-lH-zDH"/>
                     </connections>
                 </button>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A7X-9E-bvs">
+                    <rect key="frame" x="60" y="791" width="51" height="31"/>
+                    <color key="onTintColor" name="AccentColor"/>
+                    <connections>
+                        <action selector="switchTerms:" destination="-1" eventType="valueChanged" id="OEM-HF-7L5"/>
+                    </connections>
+                </switch>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="nX6-wN-tXD" firstAttribute="centerX" secondItem="48t-wo-pXy" secondAttribute="centerX" id="2UG-vm-Noj"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nX6-wN-tXD" secondAttribute="bottom" constant="36" id="2cC-Lj-sXP"/>
+                <constraint firstItem="nX6-wN-tXD" firstAttribute="top" secondItem="48t-wo-pXy" secondAttribute="bottom" constant="21" id="0Q8-5J-lGe"/>
+                <constraint firstItem="A7X-9E-bvs" firstAttribute="top" secondItem="48t-wo-pXy" secondAttribute="bottom" constant="21" id="13u-yA-27D"/>
+                <constraint firstItem="A7X-9E-bvs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="5Iq-4y-0gf"/>
                 <constraint firstItem="48t-wo-pXy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="5KX-hq-Q6J"/>
                 <constraint firstItem="wfU-7E-Hzq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" id="90P-1m-3Gs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="48t-wo-pXy" secondAttribute="trailing" constant="30" id="91T-tW-awa"/>
-                <constraint firstItem="nX6-wN-tXD" firstAttribute="trailing" secondItem="48t-wo-pXy" secondAttribute="trailing" id="C3I-2C-sSM"/>
                 <constraint firstItem="wfU-7E-Hzq" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="DGe-VN-FFF"/>
                 <constraint firstItem="48t-wo-pXy" firstAttribute="top" secondItem="VWz-2o-2wp" secondAttribute="bottom" constant="100" id="EKq-Zu-UOv"/>
                 <constraint firstItem="VWz-2o-2wp" firstAttribute="top" secondItem="X8X-V9-80e" secondAttribute="bottom" constant="10" id="JBH-gU-osh"/>
-                <constraint firstItem="nX6-wN-tXD" firstAttribute="top" secondItem="48t-wo-pXy" secondAttribute="bottom" constant="25" id="JeU-yI-oCm"/>
+                <constraint firstItem="nX6-wN-tXD" firstAttribute="leading" secondItem="A7X-9E-bvs" secondAttribute="trailing" constant="20" id="UJc-6w-1HI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VWz-2o-2wp" secondAttribute="trailing" constant="30" id="UbX-YF-J4S"/>
                 <constraint firstItem="X8X-V9-80e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="X87-a1-J20"/>
-                <constraint firstItem="nX6-wN-tXD" firstAttribute="leading" secondItem="48t-wo-pXy" secondAttribute="leading" id="aFD-0q-Jxh"/>
                 <constraint firstItem="wfU-7E-Hzq" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-150" id="fpm-AS-FnS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="X8X-V9-80e" secondAttribute="trailing" constant="30" id="jQr-57-MrF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nX6-wN-tXD" secondAttribute="trailing" constant="60" id="nKd-Vg-OnA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="X8X-V9-80e" secondAttribute="bottom" constant="267" id="vhA-OA-jEn"/>
                 <constraint firstItem="VWz-2o-2wp" firstAttribute="leading" secondItem="X8X-V9-80e" secondAttribute="leading" id="zh3-I9-zU9"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
